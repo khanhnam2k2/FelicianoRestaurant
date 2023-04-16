@@ -162,7 +162,7 @@
                           </div>
                           <h3 class="heading"><a href="{{route('post.show',$post->id)}}">{{$post->title}}</a></h3>
                           <p class="clearfix">
-                            <a href="{{route('post.show',$post->id)}}" class="float-left read">Read more</a>
+                            <a href="{{route('post.show',$post->id)}}" class="float-left read">Read moree</a>
                           </p>
                         </div>
                       </div>
