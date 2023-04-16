@@ -11,8 +11,8 @@
                   <span class="subheading">About</span>
                 <h2 class="mb-4">Feliciano Restaurant</h2>
               </div>
-              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                        <pc class="time">
+              <p>Welcome to our Restaurant, where we specialize in French Food. Our menu features fresh, locally sourced ingredients and a variety of options to accommodate all dietary needs. With a warm and welcoming atmosphere, comfortable seating, and friendly staff, our restaurant is the perfect choice for a delicious meal out. We also offer private dining and catering services for special occasions. Come join us for a unique dining experience!</p>
+                        <p class="time">
                             <span>Mon - Sun <strong>8 AM - 11 PM</strong></span>
                             <span><a href="#">+ 0-947-837-256</a></span>
                         </p>

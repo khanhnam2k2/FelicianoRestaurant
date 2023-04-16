@@ -38,7 +38,6 @@
                                   <span class="">{{$category->name}},</span>
                                   @endforeach
                               </p>
-                                <div >{{$menu->description}}</div>
                                 <p><a href="{{route('menus.show',$menu->id)}}" class="btn btn-primary">See details</a></p>
                             </div>
                         </div>
@@ -72,7 +71,6 @@
                                         <span class="">{{$category->name}},</span>
                                         @endforeach
                                     </p>
-                                      <div >{{$menu->description}}</div>
                                       <p><a href="{{route('menus.show',$menu->id)}}" class="btn btn-primary">See details</a></p>
                                   </div>
                               </div>

@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="{{asset('css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
     <div class="">
@@ -76,7 +76,7 @@
 	          <li class="nav-item cta"><a href="{{route('reservation')}}" class="nav-link">Book a table</a></li>
             @auth
             <div class="dropdown ml-4 mt-2 ">
-              <button class="btn btn-primary dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              <button class="btn btn-primary " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 {{Auth::user()->name}}
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -88,11 +88,9 @@
               </ul>
             </div>
             @else
-            <li class="nav-item">
-              <div class="no-login d-flex">
-                <a class="nav-link" href="{{route('login')}}">Login</a>
-                <a class="nav-link" href="{{route('register')}}">Register</a>
-              </div>
+            <li class="nav-item" style="margin-left:30px">
+              <a class="nav-link " href="{{route('login')}}"><i class="fa-solid fa-user"></i></a>
+
             </li>
             @endauth
 	        </ul>
@@ -109,7 +107,7 @@
           <div class="col-md-6 col-lg-3">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Feliciano</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <p>At our restaurant, you will experience delicious French cuisine prepared by top chefs</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>

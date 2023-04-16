@@ -20,7 +20,8 @@ class MenuController extends Controller
     }
     public function show(Menu $menu)
     {
+        $other_menus = Menu::where('id', '<>', $menu->id)->inRandomOrder()->take(4)->get();
 
-        return view('menus.show', compact('menu'));
+        return view('menus.show', compact('menu', 'other_menus'));
     }
 }

@@ -15,7 +15,7 @@
       </div>
       <div class="media-body p-2 mt-3">
         <h3 class="heading">Birthday Party</h3>
-        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+        <p>Our birthday party catering service is the perfect choice for anyone looking to host a memorable celebration.</p>
       </div>
     </div>      
   </div>
@@ -26,7 +26,7 @@
       </div>
       <div class="media-body p-2 mt-3">
         <h3 class="heading">Business Meetings</h3>
-        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+        <p>With spacious and quiet surroundings, our restaurant is always the ideal place for meetings.</p>
       </div>
     </div>    
   </div>
@@ -37,7 +37,7 @@
       </div>
       <div class="media-body p-2 mt-3">
         <h3 class="heading">Wedding Party</h3>
-        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+        <p>We can organize a wonderful wedding when you come to our restaurant.</p>
       </div>
     </div>      
   </div>

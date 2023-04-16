@@ -16,4 +16,22 @@
           </div>
         </div>
       </div>
+      <div class="container mb-4 mt-5">
+        <h3>Sản phẩm liên quan</h3>
+        <div class="row">
+          @foreach ($other_menus as $menu)
+          <div class="col-md-3">
+            <div class="card">
+              <img src="{{Storage::url($menu->image)}}" alt="{{$menu->name}}" class="card-img-top" style="height:200px">
+              <div class="card-body">
+                <h5 class="card-title">{{$menu->name}}</h5>
+                <a href="{{route('menus.show',$menu->id)}}" class="btn btn-primary">See Detail</a>
+              </div>
+            </div>
+          </div>
+              
+          @endforeach
+         
+        </div>
+      </div>
 </x-guest-layout>

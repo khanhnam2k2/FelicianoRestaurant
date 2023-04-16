@@ -9,6 +9,7 @@
             <div class="col-md-12 col-sm-12 text-center ftco-animate">
                 <span class="subheading">{{$slide->subheading}}</span>
               <h1 class="mb-4">{{$slide->heading}}</h1>
+              <a class="btn btn-primary" href="{{route('reservation')}}">Make Your Reservation <i class="fa-solid fa-utensils"></i></a>
             </div>
 
           </div>
@@ -106,7 +107,6 @@
                         <span class="">{{$category->name}},</span>
                         @endforeach
                     </p>
-                    <div >{{$menu->description}}</div>
 
                       <p><a href="{{route('menus.show',$menu->id)}}" class="btn btn-primary">See details</a></p>
                   </div>
@@ -162,7 +162,7 @@
                           </div>
                           <h3 class="heading"><a href="{{route('post.show',$post->id)}}">{{$post->title}}</a></h3>
                           <p class="clearfix">
-                            <a href="{{route('post.show',$post->id)}}" class="float-left read">Read moree</a>
+                            <a href="{{route('post.show',$post->id)}}" class="float-left read">Read more</a>
                           </p>
                         </div>
                       </div>
@@ -170,7 +170,11 @@
                     @endforeach
             
             
-          </div>
+                  </div>
+                  <div class="text-center">
+                    <a class="btn btn-primary text-center" href="{{route('post.index')}}">Learn more</a>
+
+                  </div>
               </div>
           </section>
 

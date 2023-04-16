@@ -21,7 +21,7 @@ class WelcomeController extends Controller
         $teams = Team::inRandomOrder()->get();
         $specials = Category::where('name', 'Specials')->first();
         $slides = Slide::where('terms', 1)->get();
-        $posts = Post::where('is_published', '1')->orderBy('created_at', 'desc')->get();
+        $posts = Post::where('is_published', '1')->orderBy('created_at', 'desc')->take(3)->get();
 
         return view('welcome', [
             'teams' => $teams,
