@@ -28,6 +28,6 @@ class ReservationController extends Controller
             'guest_number' => $request->guest_number,
             'message' => $request->message,
         ]);
-        return to_route('index')->with('message', 'Thank u for your reservation');
+        return to_route('index')->with('message', 'Thank you for making a reservation with us. We will respond to you via email soon.');
     }
 }

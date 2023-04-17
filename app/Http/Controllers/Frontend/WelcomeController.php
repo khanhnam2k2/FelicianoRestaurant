@@ -57,7 +57,7 @@ class WelcomeController extends Controller
             'subject' => $request->subject,
             'message' => $request->message,
         ]);
-        return to_route('thankyou');
+        return to_route('index')->with('message', 'Thank you for contacting us.');
     }
 
 

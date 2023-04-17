@@ -1,6 +1,6 @@
 <h1>Booking Confirmed</h1>
 
-<p>Dear {{ $reservation->user->name }},</p>
+<p>Dear {{ $reservation->name }},</p>
 
 
 <p>Your booking at My Restaurant has been confirmed.</p>
