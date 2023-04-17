@@ -1,5 +1,7 @@
 <x-guest-layout>
-    <x-hero-card namePage="Contact"  />
+  @section('title', 'Contact us - Feliciano Restaurant')
+
+    <x-hero-card namePage="Contact" bg="images/bg_4.jpg"  />
    
 
      <!-- Contact Start -->

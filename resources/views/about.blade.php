@@ -1,5 +1,6 @@
 <x-guest-layout>
-    <x-hero-card namePage="About" />
+    @section('title', 'About - Feliciano Restaurant')
+    <x-hero-card namePage="About" bg="images/about-1.jpg" />
         <!-- About Start -->
         @include('partials._about')
         <!-- About End -->

@@ -3,7 +3,8 @@
         <div class="row g-4">
             <div class="col-sm-12 col-xl-12">
                 <div class="bg-secondary rounded h-100 p-4">
-                    <h5 class="mb-3">Edit {{$menu->name}}</h5>
+                    <a href="{{route('admin.menus.index')}}" class="btn btn-primary mb-4"><i class="fa-solid fa-circle-left"> Back</i></a>
+
                     <form action="{{route('admin.menus.update',$menu->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
@@ -52,7 +53,7 @@
                             <div class="text-danger">{{$message}}</div>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-primary mt-2">Update</button>
+                    <button type="submit" class="btn btn-primary mt-2"><i class="fa-solid fa-circle-arrow-up"> Update</i></button>
 
                 </form>
                 </div>

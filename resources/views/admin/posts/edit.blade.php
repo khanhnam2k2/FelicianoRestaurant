@@ -3,7 +3,8 @@
         <div class="row g-4">
             <div class="col-sm-12 col-xl-12">
                 <div class="bg-secondary rounded h-100 p-4">
-                    <h5 class="mb-3">Edit {{$post->title}}</h5>
+                    <a href="{{route('admin.posts.index')}}" class="btn btn-primary mb-4"><i class="fa-solid fa-circle-left"> Back</i></a>
+
                     <form action="{{route('admin.posts.update',$post->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
@@ -46,7 +47,7 @@
                         <label for="is_published">Show Post</label>
                         
                     </div>
-                    <button type="submit" class="btn btn-primary mt-2">Update</button>
+                    <button type="submit" class="btn btn-primary mt-2"><i class="fa-solid fa-circle-arrow-up"> Update</i></button>
 
                 </form>
                 </div>

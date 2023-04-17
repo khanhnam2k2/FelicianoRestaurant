@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <x-hero-card namePage="Detail {{$menu->name}}" />
+    <x-hero-card namePage="Detail {{$menu->name}}"  bg="images/bg_4.jpg"/>
 
     <div class="container mt-5 mb-5">
         <div class="row">

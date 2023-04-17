@@ -29,8 +29,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('index');
 Route::get('/about', [WelcomeController::class, 'about'])->name('about');
-Route::get('/services', [WelcomeController::class, 'services'])->name('services');
-Route::get('/our-team', [WelcomeController::class, 'ourTeam'])->name('ourTeam');
+// Route::get('/services', [WelcomeController::class, 'services'])->name('services');
+// Route::get('/our-team', [WelcomeController::class, 'ourTeam'])->name('ourTeam');
 Route::get('/contact', [WelcomeController::class, 'contact'])->name('contact');
 Route::post('/contact', [WelcomeController::class, 'storeContact'])->name('contact.store');
 Route::get('/posts', [FrontendPostController::class, 'index'])->name('post.index');
@@ -38,7 +38,7 @@ Route::get('/posts/{post}', [FrontendPostController::class, 'show'])->name('post
 
 
 
-// Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+
 
 Route::get('/menus', [FrontendMenuController::class, 'index'])->name('menus.index');
 Route::get('/menus/{menu}', [FrontendMenuController::class, 'show'])->name('menus.show');
@@ -47,7 +47,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/reservation', [FrontendReservationController::class, 'store'])->name('reservation.store');
 });
 
-Route::get('/thankyou', [WelcomeController::class, 'thankyou'])->name('thankyou');
+// Route::get('/thankyou', [WelcomeController::class, 'thankyou'])->name('thankyou');
 
 
 
@@ -64,12 +64,11 @@ Route::middleware(['auth', 'admin'])->name('admin.')->prefix('admin')->group(fun
     Route::put('/reservation/{reservation}/update-status', [ReservationController::class, 'updateStatus'])->name('reservation.updateStatus');
     Route::resource('/reservation', ReservationController::class);
 
-    Route::delete('/reservation/{reservation}', [ReservationController::class, 'destroy'])->name('reservation.destroy');
+    // Route::delete('/reservation/{reservation}', [ReservationController::class, 'destroy'])->name('reservation.destroy');
     Route::get('ckeditor', [CkeditorController::class, 'index']);
     Route::post('ckeditor/upload', [CkeditorController::class, 'upload'])->name('ckeditor.upload');
 });
-// Route::middleware('authadmin')->name('admin.')->prefix('admin')->group(function () {
-// });
+
 
 
 Route::middleware('auth')->group(function () {

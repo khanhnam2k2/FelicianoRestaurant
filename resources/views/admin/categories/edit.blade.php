@@ -3,7 +3,7 @@
         <div class="row g-4">
             <div class="col-sm-12 col-xl-12">
                 <div class="bg-secondary rounded h-100 p-4">
-                    <a href="{{route('admin.categories.index')}}" class="btn btn-primary mb-4">Category Index</a>
+                    <a href="{{route('admin.categories.index')}}" class="btn btn-primary mb-4"><i class="fa-solid fa-circle-left"> Back</i></a>
                     <form action="{{route('admin.categories.update',$category->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
@@ -31,7 +31,7 @@
                             id="description" style="height: 100px;">{{$category->description}}</textarea>
                         <label for="description">Description</label>
                     </div>
-                    <button type="submit" class="btn btn-primary mt-2">Update</button>
+                    <button type="submit" class="btn btn-primary mt-2"><i class="fa-solid fa-circle-arrow-up"> Update</i> </button>
 
                 </form>
                 </div>

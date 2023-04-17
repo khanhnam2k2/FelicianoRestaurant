@@ -3,7 +3,7 @@
         <div class="row g-4">
             <div class="col-sm-12 col-xl-12">
                 <div class="bg-secondary rounded h-100 p-4">
-                    <a href="{{route('admin.posts.index')}}" class="btn btn-primary mb-4">Posts Index</a>
+                    <a href="{{route('admin.posts.index')}}" class="btn btn-primary mb-4"><i class="fa-solid fa-circle-left"> Back</i></a>
                     <form action="{{route('admin.posts.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                     <div class="form-floating mb-3">
@@ -42,7 +42,7 @@
                         <label for="is_published">Show Post</label>
                         
                     </div>
-                    <button type="submit" class="btn btn-primary mt-2">Store</button>
+                    <button type="submit" class="btn btn-primary mt-2"><i class="fa-solid fa-circle-plus"> Store</i> </button>
 
                 </form>
                 </div>

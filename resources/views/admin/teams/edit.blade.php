@@ -3,7 +3,8 @@
         <div class="row g-4">
             <div class="col-sm-12 col-xl-12">
                 <div class="bg-secondary rounded h-100 p-4">
-                    <h5 class="mb-3">Edit Chef {{$team->name}}</h5>
+                    <a href="{{route('admin.teams.index')}}" class="btn btn-primary mb-4"><i class="fa-solid fa-circle-left"> Back</i></a>
+
                     <form action="{{route('admin.teams.update',$team->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
@@ -40,7 +41,7 @@
                             id="description" style="height: 100px;">{{$team->description}}</textarea>
                         <label for="description">Description</label>
                     </div>
-                    <button type="submit" class="btn btn-primary mt-2">Update</button>
+                    <button type="submit" class="btn btn-primary mt-2"><i class="fa-solid fa-circle-arrow-up"> Update</i></button>
 
                 </form>
                 </div>

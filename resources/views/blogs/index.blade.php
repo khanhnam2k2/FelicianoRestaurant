@@ -1,5 +1,7 @@
 <x-guest-layout>
-    <x-hero-card namePage="Blog" />
+  @section('title', 'Stories - Feliciano Restaurant')
+
+    <x-hero-card namePage="Blog" bg="images/bg_5.jpg" />
     <section class="ftco-section bg-light">
         <div class="container">
             <div class="row">

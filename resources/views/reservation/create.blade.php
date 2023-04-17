@@ -1,5 +1,7 @@
 <x-guest-layout>
-    <x-hero-card namePage="Book A Table" />
+  @section('title', 'Book Table - Feliciano Restaurant')
+
+    <x-hero-card namePage="Book A Table" bg="images/bg_3.jpg" />
 
       <!-- Reservation Start -->
       <section class="ftco-section ftco-no-pt ftco-no-pb">

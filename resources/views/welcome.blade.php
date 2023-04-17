@@ -1,4 +1,6 @@
 <x-guest-layout>
+  @section('title', 'Feliciano - A Restaurant for Food Lovers')
+
     <section class="home-slider owl-carousel js-fullheight">
       @foreach ($slides as $slide)
       <div class="slider-item js-fullheight" style="background-image: url({{Storage::url($slide->image)}});">

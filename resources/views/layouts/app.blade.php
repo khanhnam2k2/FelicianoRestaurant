@@ -61,7 +61,6 @@
                     <a href="{{route('admin.reservation.index')}}" class="nav-item nav-link {{(request()->is('admin/reservation')) ? 'active' : ''}} "><i class="fa-solid fa-bell me-2"></i>Reservations</a>
                     <a href="{{route('admin.contact.index')}}" class="nav-item nav-link {{(request()->is('admin/contact')) ? 'active' : ''}} "><i class="fa-solid fa-address-book me-2"></i>Contact</a>
                     <a href="{{route('admin.teams.index')}}" class="nav-item nav-link {{(request()->is('admin/teams')) ? 'active' : ''}} "><i class="fa-solid fa-people-group me-2"></i></i>Teams</a>
-                    <a href="{{route('register')}}" class="nav-item nav-link {{(request()->is('register')) ? 'active' : ''}} "><i class="fa-solid fa-registered me-2"></i>Register</a>
                    
                     
                 </div>

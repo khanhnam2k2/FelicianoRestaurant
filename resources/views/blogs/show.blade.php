@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <x-hero-card namePage="Post {{$post->title}}" />
+    <x-hero-card namePage="Post {{$post->title}}" bg="images/lunch-4.jpg"  />
     <section class="ftco-section">
         <div class="container">
             <div class="row">

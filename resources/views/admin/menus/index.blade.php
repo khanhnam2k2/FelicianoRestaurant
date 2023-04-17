@@ -6,9 +6,9 @@
                     <a href="{{route('admin.menus.create')}}" class="mb-4 btn btn-primary">New Menu</a>
                     <form action="{{ route('admin.menus.search') }}" method="GET" class="mb-3">
                         <div class="input-group">
-                            <input type="text" name="query" class="form-control" placeholder="Tìm kiếm sản phẩm">
+                            <input type="text" name="query" class="form-control" placeholder="Search menu here">
                             <div class="input-group-append">
-                                <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+                                <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                             </div>
                         </div>
                     </form>
@@ -48,14 +48,14 @@
                                     <td>{{$menu->description}}</td>
                                     <td>
                                         <div class="d-flex">
-                                        <a href="{{route('admin.menus.edit',$menu->id)}}" class="btn btn-info me-2">Edit</a>
+                                        <a href="{{route('admin.menus.edit',$menu->id)}}" class="btn btn-info me-2"><i class="fa-solid fa-pen-to-square"></i></a>
                                         <form class=""
                                             method="POST"
                                             action="{{route('admin.menus.destroy',$menu->id)}}"
                                             onsubmit="return confirm('Are you sure?')">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="btn btn-danger" type="submit">Delete</button>
+                                            <button class="btn btn-danger" type="submit"><i class="fa-solid fa-trash"></i></button>
                                         </form>
                                     </div>
                                     </td>

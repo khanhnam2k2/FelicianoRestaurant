@@ -31,14 +31,14 @@
                                     </td>
                                     <td>
                                         <div class="d-flex">
-                                        <a href="{{route('admin.slides.edit',$slide->id)}}" class="btn btn-info me-2">Edit</a>
+                                        <a href="{{route('admin.slides.edit',$slide->id)}}" class="btn btn-info me-2"><i class="fa-solid fa-pen-to-square"></i></a>
                                         <form class=""
                                             method="POST"
                                             action="{{route('admin.slides.destroy',$slide->id)}}"
                                             onsubmit="return confirm('Are you sure?')">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="btn btn-danger" type="submit">Delete</button>
+                                            <button class="btn btn-danger" type="submit"><i class="fa-solid fa-trash"></i></button>
                                         </form>
                                     </div>
                                     </td>

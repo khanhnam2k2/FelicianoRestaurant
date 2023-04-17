@@ -36,15 +36,7 @@ class WelcomeController extends Controller
         $teams = Team::inRandomOrder()->get();
         return view('about', compact('teams'));
     }
-    public function services()
-    {
-        return view('services');
-    }
-    public function ourTeam()
-    {
-        $teams = Team::inRandomOrder()->get();
-        return view('ourTeam', compact('teams'));
-    }
+
     public function contact()
     {
         return view('contact');
