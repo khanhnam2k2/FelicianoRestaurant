@@ -17,7 +17,7 @@ class MenuController extends Controller
     public function index(Request $request)
     {
 
-        $menus = Menu::orderBy('id', 'desc')->get();
+        $menus = Menu::orderBy('id', 'desc')->simplePaginate(3);
 
         return view('admin.menus.index', compact('menus'));
     }

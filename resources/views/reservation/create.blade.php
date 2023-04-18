@@ -45,7 +45,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                       <label for="guest_number">Guest number</label>
-                      <input type="number" name="guest_number" class="form-control" placeholder="Guest number">
+                      <input type="number" name="guest_number" min="1" max="20" class="form-control" placeholder="Guest number">
                       @error('guest_number')
                       <div class="text-danger">{{ $message }}</div>
                   @enderror

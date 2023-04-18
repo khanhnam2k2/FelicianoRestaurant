@@ -64,7 +64,7 @@
                             </tbody>
                         </table>
                     </div>
-                    {{-- <div class="d-flex justify-content-end">{{$menus->links()}}</div> --}}
+                    <div class="d-flex justify-content-end">{{$menus->links()}}</div>
                 </div>
             </div>
         </div>

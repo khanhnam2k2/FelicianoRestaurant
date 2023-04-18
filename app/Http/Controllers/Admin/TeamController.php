@@ -41,7 +41,7 @@ class TeamController extends Controller
             'image' => $image,
             'description' => $request->description,
         ]);
-        return to_route('admin.teams.index')->with('success', 'Team created successfuly.');
+        return to_route('admin.teams.index')->with('success', 'Chef created successfuly.');
     }
 
     /**
@@ -80,7 +80,7 @@ class TeamController extends Controller
             'description' => $request->description,
             'image' => $image
         ]);
-        return to_route('admin.teams.index')->with('success', 'Team updated successfully.');
+        return to_route('admin.teams.index')->with('success', 'Chef updated successfully.');
     }
 
     /**
@@ -90,6 +90,6 @@ class TeamController extends Controller
     {
         Storage::delete($team->image);
         $team->delete();
-        return to_route('admin.teams.index')->with('danger', 'Team deleted successfully.');
+        return to_route('admin.teams.index')->with('danger', 'Chef deleted successfully.');
     }
 }
