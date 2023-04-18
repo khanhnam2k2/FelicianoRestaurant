@@ -7,8 +7,8 @@
 
 <p>Please contact us if you have any questions or concerns.</p>
 <ul>
-    <li>Phone: +0947837222</li>
-    <li>Gmail: FelicianoRestaurant@gmail.com</li>
+    <li>Phone: 📞+0947837222</li>
+    <li>Gmail: 📧 FelicianoRestaurant@gmail.com</li>
 </ul>
 
 <p>Best regards,<br>The Feliciano Restaurant</p>

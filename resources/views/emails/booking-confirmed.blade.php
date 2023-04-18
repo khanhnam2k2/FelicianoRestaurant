@@ -3,7 +3,7 @@
 <p>Dear {{ $reservation->name }},</p>
 
 
-<p>Your booking at My Restaurant has been confirmed.</p>
+<p>Your booking at My Restaurant has been confirmed 🎉🎉</p>
 
 <p>Booking details:</p>
 
@@ -11,7 +11,7 @@
     <li>Booking ID: {{ $reservation->id }}</li>
     <li>Date: {{ $reservation->res_date }}</li>
     <li>Number of guests: {{ $reservation->guest_number }}</li>
-    <li>Our address: 182 Lê Duẩn - Đại học Vinh - Nghệ An </li>
+    <li>Our address: 🏡 182 Lê Duẩn - Đại học Vinh - Nghệ An </li>
 </ul>
 
-<p>Thank you for choosing Our Feliciano Restaurant!</p>
+<p>Thank you for choosing Our Feliciano Restaurant ❤️❤️❤️</p>
