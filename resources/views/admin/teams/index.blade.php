@@ -29,7 +29,7 @@
                                             src="{{Storage::url($team->image)}}"
                                             alt=""
                                             width="100%"
-                                            height="300px"
+                                            height="500px"
                                             style="object-fit: cover"
                                         />
                                     </td>

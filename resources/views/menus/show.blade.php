@@ -16,8 +16,11 @@
           </div>
         </div>
       </div>
-      <div class="container mb-4 mt-5">
-        <h3>Sản phẩm liên quan</h3>
+      <div class="container mb-4 mt-5 pt-5">
+        <div class="col-md-12 text-center heading-section ftco-animate ">
+          <span class="subheading">Specialties</span>
+        <h2 class="mb-4">Related products</h2>
+      </div>
         <div class="row">
           @foreach ($other_menus as $menu)
           <div class="col-md-3">
