@@ -27,9 +27,21 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
 
-        $request->session()->regenerate();
+        // $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        // return redirect()->intended(RouteServiceProvider::HOME);
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials) && Auth::user()->utype == 'USR') {
+            // Đăng nhập thành công, chuyển hướng đến trang khách hàng
+            return redirect()->intended('/');
+        }
+        if (Auth::attempt($credentials) && Auth::user()->utype == 'ADM') {
+            // Đăng nhập thành công, chuyển hướng đến trang nhân viên
+            return redirect()->intended('/admin');
+        }
+        // Đăng nhập không thành công, chuyển hướng về trang đăng nhập
+        return redirect('/login')->withErrors('Invalid login credentials');
     }
 
     /**
