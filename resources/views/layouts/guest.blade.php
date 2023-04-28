@@ -80,6 +80,9 @@
                 {{Auth::user()->name}}
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                @if (Auth::user()->utype == 'ADM')
+                <li class="dropdown-item"><a href="/admin">DashBoard</a></li>
+                @endif
                 <li><form action="{{route('logout')}}" method="POST" class="dropdown-item">
                   @csrf
                   <button type="submit" class="btn">Log Out</button>

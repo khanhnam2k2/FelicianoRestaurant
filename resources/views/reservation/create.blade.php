@@ -17,7 +17,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="">Name</label>
+                    <label for="name">Name</label>
                     <input type="text" name="name" class="form-control" placeholder="Your Name">
                     @error('name')
                     <div class="text-danger">{{ $message }}</div>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="">Email</label>
+                    <label for="email">Email</label>
                     <input type="email" name="email" class="form-control" placeholder="Your Email">
                     @error('email')
                     <div class="text-danger">{{ $message }}</div>

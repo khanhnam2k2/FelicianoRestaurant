@@ -39,6 +39,7 @@ Route::get('/posts/{post}', [FrontendPostController::class, 'show'])->name('post
 
 
 
+Route::get('/menus/search', [FrontendMenuController::class, 'search'])->name('menus.search');
 
 Route::get('/menus', [FrontendMenuController::class, 'index'])->name('menus.index');
 Route::get('/menus/{menu}', [FrontendMenuController::class, 'show'])->name('menus.show');

@@ -24,7 +24,7 @@ class MenuController extends Controller
     public function search(Request $request)
     {
         $query = $request->input('query');
-        $menus = Menu::where('name', 'LIKE', "%$query%")->orderBy('id', 'desc')->get();
+        $menus = Menu::where('name', 'LIKE', "%$query%")->orderBy('id', 'desc')->simplePaginate(3);
         return view('admin.menus.index', compact('menus'));
     }
     /**

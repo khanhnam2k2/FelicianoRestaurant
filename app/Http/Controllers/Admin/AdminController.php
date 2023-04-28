@@ -11,8 +11,8 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $time_today = new \DateTime();
-        $reservation_today = Reservation::where('res_date', '>', $time_today)->count();
+        // $time_today = new \DateTime();
+        $reservation_today = Reservation::where('status', 'pending')->count();
         $posts = Post::where('is_published', 1)->get();
         $count_blog_posted = $posts->count();
         return view('admin.index', [

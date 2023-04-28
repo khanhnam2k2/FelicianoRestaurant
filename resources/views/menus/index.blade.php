@@ -5,6 +5,14 @@
     <section class="ftco-section">
     	<div class="container">
         <div class="ftco-search">
+          <form action="{{ route('menus.search') }}" method="GET" class="mb-3">
+            <div class="input-group">
+                <input type="text" name="query" class="form-control" placeholder="Search menu here">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+        </form>
 					<div class="row">
             <div class="col-md-12 nav-link-wrap">
 	            <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical" style="justify-content: space-between">

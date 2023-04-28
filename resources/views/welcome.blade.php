@@ -141,7 +141,84 @@
               </div>
           </section>
   
-          
+          {{-- Book table --}}
+          <section class="ftco-section img" style="background-image: url(images/bg_3.jpg)" data-stellar-background-ratio="0.5">
+            <div class="container">
+              <div class="row d-flex">
+                <div class="col-md-7 ftco-animate makereservation p-4 px-md-5 pb-md-5">
+                  <div class="heading-section ftco-animate mb-5 text-center">
+                    <span class="subheading">Book a table</span>
+                    <h2 class="mb-4">Make Reservation</h2>
+                  </div>
+                  <form action="{{route('reservation.store')}}" method="POST">
+                    @csrf
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="name">Name</label>
+                          <input type="text" name="name" class="form-control" placeholder="Your Name">
+                          @error('name')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="email">Email</label>
+                          <input type="email" name="email" class="form-control" placeholder="Your Email">
+                          @error('email')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="tel_number">Phone</label>
+                          <input type="text" name="tel_number" class="form-control" placeholder="Phone">
+                          @error('tel_number')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="">Guest Number</label>
+                          <input type="number" min="1" max="20" name="guest_number" class="form-control"  placeholder="Guest number">
+                          @error('guest_number')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="res_date">Reservation Date</label>
+                          <input type="datetime-local" name="res_date" class="form-control" placeholder="Date">
+                          @error('res_date')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="">Message</label>
+                          <textarea name="message" class="w-100" rows="3"></textarea>
+                          @error('message')
+                          <div class="text-danger">{{ $message }}</div>
+                      @enderror
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-12 mt-2">
+                        <div class="form-group text-center">
+                          <input type="submit" value="Make a Reservation" class="btn btn-primary py-3 px-5">
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
           {{-- blogs --}}
           <section class="ftco-section bg-light">
               <div class="container">
@@ -179,5 +256,6 @@
                   </div>
               </div>
           </section>
-
+        
+          
 </x-guest-layout>
