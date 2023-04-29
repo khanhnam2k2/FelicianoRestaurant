@@ -52,7 +52,7 @@ Route::middleware('auth')->group(function () {
 
 
 
-Route::middleware('auth')->name('admin.')->prefix('admin')->group(function () {
+Route::middleware('admin')->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('index');
     Route::resource('/categories', CategoryController::class);
     Route::get('/menus/search', [MenuController::class, 'search'])->name('menus.search');

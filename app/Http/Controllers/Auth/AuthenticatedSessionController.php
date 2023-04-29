@@ -25,7 +25,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        $request->authenticate();
+        // $request->authenticate();
 
         // $request->session()->regenerate();
 
@@ -34,14 +34,14 @@ class AuthenticatedSessionController extends Controller
 
         if (Auth::attempt($credentials) && Auth::user()->utype == 'USR') {
             // Đăng nhập thành công, chuyển hướng đến trang khách hàng
-            return redirect()->intended('/');
+            return redirect()->intended('/')->with('message', 'Welcome to Feliciano Restaurant');
         }
         if (Auth::attempt($credentials) && Auth::user()->utype == 'ADM') {
             // Đăng nhập thành công, chuyển hướng đến trang nhân viên
             return redirect()->intended('/admin');
         }
         // Đăng nhập không thành công, chuyển hướng về trang đăng nhập
-        return redirect('/login')->withErrors('Invalid login credentials');
+        return redirect('/login')->withErrors(['email' => 'Email hoặc mật khẩu không đúng!']);
     }
 
     /**

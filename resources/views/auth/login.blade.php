@@ -60,24 +60,33 @@
                         </a>
                         <h3>Sign In</h3>
                     </div>
+                    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
                   <form action="{{route('login')}}" method="POST">
                     @csrf
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control @error('email') is-invalid @enderror"
                          name="email" id="email" placeholder="name@example.com">
                         <label for="email">Email address</label>
-                        @error('email')
+                        {{-- @error('email')
                         <div class="text-danger">{{$message}}</div>
-                        @enderror
+                        @enderror --}}
                     </div>
                     <div class="form-floating mb-4">
                         <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
                          id="password" placeholder="Password">
                         <label for="password">Password</label>
-                        @error('password')
+                        {{-- @error('password')
                         <div class="text-danger">{{$message}}</div>
                             
-                        @enderror
+                        @enderror --}}
                     </div>
                     
                     <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign In</button>
