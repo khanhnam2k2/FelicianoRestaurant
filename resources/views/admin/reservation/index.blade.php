@@ -29,7 +29,8 @@
                                     <td>{{$reservation->status}}</td>
                                     <td>{{$reservation->message}}</td>
                                     <td>
-                                        <a href="{{route('admin.reservation.show',$reservation->id)}}">show</a>
+                                        <div class="d-flex justify-content-between">
+                                            <a href="{{route('admin.reservation.show',$reservation->id)}}" class="btn btn-info" ><i class="fa-solid fa-list-check"></i></a>
                                         <form class=""
                                             method="POST"
                                             action="{{route('admin.reservation.destroy',$reservation->id)}}"
@@ -38,6 +39,7 @@
                                             @method('DELETE')
                                             <button class="btn btn-danger" type="submit"><i class="fa-solid fa-trash"></i></button>
                                         </form>
+                                        </div>
                                     </td>
                                 </tr>
                                 @endforeach

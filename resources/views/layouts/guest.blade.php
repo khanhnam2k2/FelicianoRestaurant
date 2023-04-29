@@ -36,6 +36,11 @@
           <script>swal("{{session()->get('message')}}", "", "success");</script>
       </div>
       @endif
+      @if(session()->has('danger'))
+      <div >
+          <script>swal("{{session()->get('danger')}}", "", "error");</script>
+      </div>
+      @endif
       
   </div>
     <div class="py-1 bg-black top">
@@ -83,6 +88,7 @@
                 @if (Auth::user()->utype == 'ADM')
                 <li class="dropdown-item"><a href="/admin">DashBoard</a></li>
                 @endif
+                <li class="dropdown-item"><a href="{{route('reservation.show')}}">My Reservation</a></li>
                 <li><form action="{{route('logout')}}" method="POST" class="dropdown-item">
                   @csrf
                   <button type="submit" class="btn">Log Out</button>

@@ -34,4 +34,16 @@ class ReservationController extends Controller
         Mail::to($admin_gmail)->send(new BookingNotification($reservation));
         return to_route('index')->with('message', 'Thank you for making a reservation with us. We will respond to you via email soon.');
     }
+    public function show(Reservation $reservation)
+    {
+        $reservations = Reservation::where('user_id', Auth::user()->id)->get();
+        // dd($reservation);
+        // exit;
+        return view('reservation.booking', compact('reservations'));
+    }
+    public function delete(Reservation $reservation)
+    {
+        $reservation->delete();
+        return to_route('reservation.show')->with('danger', 'Reservation deleted successfully');
+    }
 }

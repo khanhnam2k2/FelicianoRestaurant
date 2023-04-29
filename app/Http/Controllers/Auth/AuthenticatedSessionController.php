@@ -41,7 +41,7 @@ class AuthenticatedSessionController extends Controller
             return redirect()->intended('/admin');
         }
         // Đăng nhập không thành công, chuyển hướng về trang đăng nhập
-        return redirect('/login')->withErrors(['email' => 'Email hoặc mật khẩu không đúng!']);
+        return redirect('/login')->withErrors(['email' => 'Email or password is incorrect!']);
     }
 
     /**

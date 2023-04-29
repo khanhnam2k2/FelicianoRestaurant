@@ -46,6 +46,8 @@ Route::get('/menus/{menu}', [FrontendMenuController::class, 'show'])->name('menu
 Route::middleware('auth')->group(function () {
     Route::get('/reservation', [FrontendReservationController::class, 'create'])->name('reservation');
     Route::post('/reservation', [FrontendReservationController::class, 'store'])->name('reservation.store');
+    Route::get('/reservation/show', [FrontendReservationController::class, 'show'])->name('reservation.show');
+    Route::delete('/reservation/{reservation}', [FrontendReservationController::class, 'delete'])->name('reservation.delete');
 });
 
 // Route::get('/thankyou', [WelcomeController::class, 'thankyou'])->name('thankyou');
