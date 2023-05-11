@@ -11,7 +11,6 @@
     <li>Booking ID: {{ $reservation->id }}</li>
     <li>Date: {{ $reservation->res_date }}</li>
     <li>Number of guests: {{ $reservation->guest_number }}</li>
-    <li>Our address: 🏡 182 Lê Duẩn - Đại học Vinh - Nghệ An </li>
 </ul>
-
+<p>Our address: 🏡 182 Lê Duẩn - Đại học Vinh - Nghệ An </p>
 <p>Thank you for choosing Our Feliciano Restaurant ❤️❤️❤️</p>

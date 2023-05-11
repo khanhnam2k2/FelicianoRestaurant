@@ -1,37 +1,32 @@
 <x-app-layout>
-    
     <div class="container-fluid pt-4 px-4">
         <div class="row g-4">
             <div class="col-12">
                 <div class="bg-secondary rounded h-100 p-4">
-                    <a href="{{route('admin.categories.create')}}" class="mb-4 btn btn-primary">New Category</a>
+                    <h5 class="mb-3">Customer List</h5>
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col"> Name</th>
-                                    <th scope="col">Description</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($categories as $category)
+                                @foreach ($customers as $customer)
                                 <tr>
-                                    <td>{{$category->name}}</td>
-                                   
-                                    <td>{{$category->description}}</td>
+                                    <td>{{$customer->name}}</td>
+                                    <td>{{$customer->email}}</td>
                                     <td>
-                                        <div class="d-flex">
-                                        <a href="{{route('admin.categories.edit',$category->id)}}" class="btn btn-info me-2"><i class="fa-solid fa-pen-to-square"></i></a>
                                         <form class=""
                                             method="POST"
-                                            action="{{route('admin.categories.destroy',$category->id)}}"
-                                            onsubmit="return confirm('Are you sure you want to delete this category?')">
+                                            action="{{route('admin.customers.destroy',$customer->id)}}"
+                                            onsubmit="return confirm('Are you sure?')">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger" type="submit"><i class="fa-solid fa-trash"></i></button>
                                         </form>
-                                    </div>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -43,5 +38,4 @@
         </div>
 
     </div>
- </x-app-layout>
- 
+</x-app-layout>

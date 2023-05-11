@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ReservationController;
 use App\Http\Controllers\Admin\SlideController;
 use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CkeditorController;
 use App\Http\Controllers\Frontend\MenuController as FrontendMenuController;
 use App\Http\Controllers\Frontend\PostController as FrontendPostController;
@@ -62,10 +63,11 @@ Route::middleware('admin')->name('admin.')->prefix('admin')->group(function () {
     Route::resource('/slides', SlideController::class);
     Route::resource('/posts', PostController::class);
     Route::resource('/teams', TeamController::class);
-
     Route::resource('/contact', AdminContactController::class);
     Route::put('/reservation/{reservation}/update-status', [ReservationController::class, 'updateStatus'])->name('reservation.updateStatus');
     Route::resource('/reservation', ReservationController::class);
+    Route::get('/customers', [UserController::class, 'index'])->name('customers.index');
+    Route::delete('/customers/{user}', [UserController::class, 'destroy'])->name('customers.destroy');
 
     // Route::delete('/reservation/{reservation}', [ReservationController::class, 'destroy'])->name('reservation.destroy');
     Route::get('ckeditor', [CkeditorController::class, 'index']);

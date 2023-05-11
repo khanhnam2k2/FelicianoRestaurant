@@ -36,6 +36,23 @@
 </head>
 
 <body>
+    <div class="">
+        @if(session()->has('danger'))
+        <div >
+            <script>swal("{{session()->get('danger')}}", "", "error");</script>
+        </div>
+        @endif
+        @if(session()->has('success'))
+        <div >
+            <script>swal("{{session()->get('success')}}", "", "success");</script>
+        </div>
+        @endif
+        @if(session()->has('warning'))
+        <div >
+            <script>swal("{{session()->get('warning')}}", "", "warning");</script>
+        </div>
+        @endif
+    </div>
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -60,7 +77,8 @@
                     <a href="{{route('admin.slides.index')}}" class="nav-item nav-link {{(request()->is('admin/slides')) ? 'active' : ''}} "><i class="fa-solid fa-sliders me-2"></i>Slides</a>
                     <a href="{{route('admin.reservation.index')}}" class="nav-item nav-link {{(request()->is('admin/reservation')) ? 'active' : ''}} "><i class="fa-solid fa-bell me-2"></i>Reservations</a>
                     <a href="{{route('admin.contact.index')}}" class="nav-item nav-link {{(request()->is('admin/contact')) ? 'active' : ''}} "><i class="fa-solid fa-address-book me-2"></i>Contact</a>
-                    <a href="{{route('admin.teams.index')}}" class="nav-item nav-link {{(request()->is('admin/teams')) ? 'active' : ''}} "><i class="fa-solid fa-people-group me-2"></i></i>Teams</a>
+                    <a href="{{route('admin.teams.index')}}" class="nav-item nav-link {{(request()->is('admin/teams')) ? 'active' : ''}} "><i class="fa-solid fa-user-group"></i>Chefs</a>
+                    <a href="{{route('admin.customers.index')}}" class="nav-item nav-link {{(request()->is('admin/customers')) ? 'active' : ''}} "><i class="fa-solid fa-people-group me-2"></i>Customer</a>
                    
                     
                 </div>
@@ -88,6 +106,7 @@
                             <span class="d-none d-lg-inline-flex">{{Auth::user()->name}}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="/" class="dropdown-item">View Website</a>
                             {{-- <a href="{{route('profile.edit')}}" class="dropdown-item">My Profile</a> --}}
                             <form action="{{route('logout')}}" method="POST" class="dropdown-item">
                                 @csrf
@@ -101,23 +120,7 @@
 
 
            <div>
-            <div class="">
-                @if(session()->has('danger'))
-                <div >
-                    <script>swal("{{session()->get('danger')}}", "", "error");</script>
-                </div>
-                @endif
-                @if(session()->has('success'))
-                <div >
-                    <script>swal("{{session()->get('success')}}", "", "success");</script>
-                </div>
-                @endif
-                @if(session()->has('warning'))
-                <div >
-                    <script>swal("{{session()->get('warning')}}", "", "warning");</script>
-                </div>
-                @endif
-            </div>
+          
             {{$slot}}
            </div>
 

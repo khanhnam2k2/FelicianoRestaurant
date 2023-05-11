@@ -25,6 +25,7 @@ class MenuStoreRequest extends FormRequest
             'name' => ['required'],
             'image' => ['required', 'image'],
             'price' => ['required'],
+            'categories' => ['required'],
             'description' => ['required'],
 
         ];

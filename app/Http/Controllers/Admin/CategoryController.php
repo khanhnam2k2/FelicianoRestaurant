@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Storage;
 class CategoryController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Hiển thị danh sách danh mục thực đơn
      */
     public function index()
     {
@@ -22,7 +22,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * View tạo danh mục
      */
     public function create()
     {
@@ -31,7 +31,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Tạo danh mục mới
      */
     public function store(CategoryStoreRequest $request)
     {
@@ -44,15 +44,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
+     * View chỉnh sửa danh mục
      */
     public function edit(Category $category)
     {
@@ -60,7 +52,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Chỉnh sửa danh mục
      */
     public function update(Request $request, Category  $category)
     {
@@ -76,12 +68,12 @@ class CategoryController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Xóa danh mục
      */
     public function destroy(Category $category)
     {
         $category->menus()->detach();
         $category->delete();
-        return to_route('admin.categories.index')->with('danger', 'Category deleted successfully.');
+        return to_route('admin.categories.index')->with('success', 'Category deleted successfully.');
     }
 }

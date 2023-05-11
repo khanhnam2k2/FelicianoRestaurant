@@ -17,61 +17,9 @@
           </div>
         </div>
       </div>
-          
       @endforeach
-  
-       
       </section>
   
-      {{-- <section class="ftco-section ftco-no-pt ftco-no-pb">
-          <div class="container-fluid">
-              <div class="row">
-                  <div class="col-md-12">
-                      <div class="featured">
-                          <div class="row">
-                              <div class="col-md-3">
-                                  <div class="featured-menus ftco-animate">
-                            <div class="menu-img img" style="background-image: url(images/breakfast-1.jpg);"></div>
-                            <div class="text text-center">
-                            <h3>Grilled Beef with potatoes</h3>
-                                <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-                            </div>
-                          </div>
-                              </div>
-                              <div class="col-md-3">
-                                  <div class="featured-menus ftco-animate">
-                            <div class="menu-img img" style="background-image: url(images/breakfast-2.jpg);"></div>
-                            <div class="text text-center">
-                            <h3>Grilled Beef with potatoes</h3>
-                                <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-                            </div>
-                          </div>
-                              </div>
-                              <div class="col-md-3">
-                                  <div class="featured-menus ftco-animate">
-                            <div class="menu-img img" style="background-image: url(images/breakfast-3.jpg);"></div>
-                            <div class="text text-center">
-                            <h3>Grilled Beef with potatoes</h3>
-                                <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-                            </div>
-                          </div>
-                              </div>
-                              <div class="col-md-3">
-                                  <div class="featured-menus ftco-animate">
-                            <div class="menu-img img" style="background-image: url(images/breakfast-4.jpg);"></div>
-                            <div class="text text-center">
-                            <h3>Grilled Beef with potatoes</h3>
-                                <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-                            </div>
-                          </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section> --}}
-
       {{-- about --}}
       @include('partials._about')
   
@@ -88,6 +36,7 @@
               <h2 class="mb-4">Our Menu</h2>
             </div>
           </div>
+          @if ($specials)
           <div class="row no-gutters d-flex align-items-stretch">
             @foreach ($specials->menus as $menu)
             <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
@@ -119,6 +68,10 @@
             @endforeach
               
           </div>
+          @else
+              <h2 class="text-center">Today our restaurant does not have a special menu</h2>
+          @endif
+        
           </div>
       </section>
       
@@ -131,12 +84,10 @@
               <h2 class="mb-4">Our Master Chef</h2>
             </div>
           </div>	
-                  <div class="row">
+                  <div class="row "id="demo">
                         @foreach ($teams as $team)
                         <x-team-card :team=$team/>
                         @endforeach
-                      
-                  
                   </div>
               </div>
           </section>
@@ -228,7 +179,7 @@
               <h2 class="mb-4">Recent Posts</h2>
             </div>
           </div>
-                  <div class="row">
+                  <div class="row" >
                     @foreach ($posts as $post)
                     <div class="col-md-4 ftco-animate">
                       <div class="blog-entry">
@@ -240,6 +191,7 @@
                             <div><a href="#">{{$post->user->name}}</a></div>
                           </div>
                           <h3 class="heading"><a href="{{route('post.show',$post->id)}}">{{$post->title}}</a></h3>
+                          {{-- <p class="text-sm">{{$post->excerpt}}</p> --}}
                           <p class="clearfix">
                             <a href="{{route('post.show',$post->id)}}" class="float-left read">Read more</a>
                           </p>
@@ -247,15 +199,11 @@
                       </div>
                     </div>
                     @endforeach
-            
-            
                   </div>
                   <div class="text-center">
                     <a class="btn btn-primary text-center" href="{{route('post.index')}}">Learn more</a>
-
                   </div>
               </div>
           </section>
         
-          
 </x-guest-layout>

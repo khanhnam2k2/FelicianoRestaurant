@@ -4,37 +4,38 @@
       <div class="row g-4">
           <div class="col-sm-6 col-xl-3">
               <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                  <i class="fa fa-chart-line fa-3x text-primary"></i>
-                  <div class="ms-3">
-                      <p class="mb-2">Today Sale</p>
-                      <h6 class="mb-0">$1234</h6>
+                <i class="fa-solid fa-utensils fa-3x text-primary"></i>
+                  <div class="ms-2">
+                    <a href="{{route('admin.menus.index')}}" class="mb-2">Menus</a>
+                      <h6 class="mb-0">{{count($menus) > 0 ? "Have ".count($menus) : "No"}} dish</h6>
+                  </div>
+              </div>    
+          </div>
+          <div class="col-sm-6 col-xl-3">
+              <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa-solid fa-user-group fa-3x text-primary"></i>
+                  <div class="ms-2">
+                    <a href="{{route('admin.customers.index')}}" class="mb-2">Customers</a>
+                      <h6 class="mb-0">Have {{$total_customers}} Account</h6>
                   </div>
               </div>
           </div>
           <div class="col-sm-6 col-xl-3">
               <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                  <i class="fa fa-chart-bar fa-3x text-primary"></i>
-                  <div class="ms-3">
-                      <p class="mb-2">Total Sale</p>
-                      <h6 class="mb-0">$1234</h6>
-                  </div>
-              </div>
-          </div>
-          <div class="col-sm-6 col-xl-3">
-              <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                  <i class="fa-solid fa-bell fa-3x text-primary"></i>
-                  <div class="ms-3">
-                      <a href="{{route('admin.reservation.index')}}" class="mb-2">Reservation</a>
-                      <h6 class="mb-0">Have {{$reservation_today}} reserve</h6>
+                    <i class="fa-solid fa-bell fa-3x text-primary" >
+                    </i>
+                  <div class="ms-2">
+                      <a href="{{route('admin.reservation.index')}}" class="mb-2">Reservation Today</a>
+                      <h6 class="mb-0">{{count($reservations_today)>0 ? "Have ".count($reservations_today) : "No"}} Reservation  </h6>
                   </div>
               </div>
           </div>
           <div class="col-sm-6 col-xl-3">
               <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                   <i class="fa-solid fa-blog fa-3x text-primary"></i>
-                  <div class="ms-3">
-                      <p class="mb-2">The Post was posted</p>
-                      <h6 class="mb-0">Have {{$count_blog_posted}} post</h6>
+                  <div class="ms-2">
+                    <a href="{{route('admin.posts.index')}}" class="mb-2">Posts posted</a>
+                      <h6 class="mb-0">Have {{count($posts)}} post</h6>
                   </div>
               </div>
           </div>
@@ -47,71 +48,41 @@
   <div class="container-fluid pt-4 px-4">
       <div class="bg-secondary text-center rounded p-4">
           <div class="d-flex align-items-center justify-content-between mb-4">
-              <h6 class="mb-0">Recent Salse</h6>
-              <a href="">Show All</a>
+              <h6 class="mb-0">Table Reservation Pending </h6>
+              <a href="{{route('admin.reservation.index')}}">View All</a>
           </div>
+          @if (count($reservations_pending) >0)
           <div class="table-responsive">
               <table class="table text-start align-middle table-bordered table-hover mb-0">
                   <thead>
                       <tr class="text-white">
-                          <th scope="col"><input class="form-check-input" type="checkbox"></th>
                           <th scope="col">Date</th>
-                          <th scope="col">Invoice</th>
+                          {{-- <th scope="col">Invoice</th> --}}
                           <th scope="col">Customer</th>
-                          <th scope="col">Amount</th>
-                          <th scope="col">Status</th>
+                          {{-- <th scope="col">Amount</th> --}}
+                          <th scope="col">Guest Number</th>
                           <th scope="col">Action</th>
                       </tr>
                   </thead>
                   <tbody>
-                      <tr>
-                          <td><input class="form-check-input" type="checkbox"></td>
-                          <td>01 Jan 2045</td>
-                          <td>INV-0123</td>
-                          <td>Jhon Doe</td>
-                          <td>$123</td>
-                          <td>Paid</td>
-                          <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                      </tr>
-                      <tr>
-                          <td><input class="form-check-input" type="checkbox"></td>
-                          <td>01 Jan 2045</td>
-                          <td>INV-0123</td>
-                          <td>Jhon Doe</td>
-                          <td>$123</td>
-                          <td>Paid</td>
-                          <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                      </tr>
-                      <tr>
-                          <td><input class="form-check-input" type="checkbox"></td>
-                          <td>01 Jan 2045</td>
-                          <td>INV-0123</td>
-                          <td>Jhon Doe</td>
-                          <td>$123</td>
-                          <td>Paid</td>
-                          <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                      </tr>
-                      <tr>
-                          <td><input class="form-check-input" type="checkbox"></td>
-                          <td>01 Jan 2045</td>
-                          <td>INV-0123</td>
-                          <td>Jhon Doe</td>
-                          <td>$123</td>
-                          <td>Paid</td>
-                          <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                      </tr>
-                      <tr>
-                          <td><input class="form-check-input" type="checkbox"></td>
-                          <td>01 Jan 2045</td>
-                          <td>INV-0123</td>
-                          <td>Jhon Doe</td>
-                          <td>$123</td>
-                          <td>Paid</td>
-                          <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                      </tr>
+                    @foreach ($reservations_pending as $reservation)
+                    <tr>
+                        <td>{{$reservation->res_date}}</td>
+                        {{-- <td>INV-0123</td> --}}
+                        <td>{{$reservation->name}}</td>
+                        {{-- <td>$123</td> --}}
+                        <td>{{$reservation->guest_number}}</td>
+                        <td><a class="btn btn-sm btn-primary" href="{{route('admin.reservation.show',$reservation->id)}}">Process</a></td>
+                    </tr>
+                        
+                    @endforeach
+                     
                   </tbody>
               </table>
           </div>
+           @else
+            <h2>No table reservations are pending!!</h2>   
+          @endif
       </div>
   </div>
   <!-- Recent Sales End -->
@@ -133,9 +104,10 @@
           <div class="col-sm-12 col-md-6">
               <div class="h-100 bg-secondary rounded p-4">
                   <div class="d-flex align-items-center justify-content-between mb-4">
-                      <h6 class="mb-0">Post was posted</h6>
-                      <a href="{{route('admin.posts.index')}}">Show All</a>
+                      <h6 class="mb-0 text-primary">Recent posts <span class="text-info">(7days)</span></h6>
+                      <a href="{{route('admin.posts.index')}}">View All</a>
                   </div>
+                  @if (count($rencent_posts)>0)
                   <div class="table-responsive">
                     <table class="table text-start align-middle table-bordered table-hover mb-0">
                         <thead>
@@ -148,7 +120,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($posts as $post)
+                            @foreach ($rencent_posts as $post)
                             <tr>
                                 <td>{{$post->title}}</td>
                                 <td><img src="{{Storage::url($post->image)}}" width="100px" alt=""></td>
@@ -162,6 +134,10 @@
                         </tbody>
                     </table>
                 </div>
+                  @else
+                      <h2 class="text-primary text-center">No Post</h2>
+                  @endif
+                  
                   
                   
               </div>

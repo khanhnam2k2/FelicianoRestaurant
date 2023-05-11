@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('utype')->default('USR')->comment('ADM for ADMIN and USR for users');
+            $table->string('utype')->default('CUS')->comment('ADM for ADMIN and CUS for Customer');
 
             $table->string('password');
             $table->rememberToken();

@@ -32,7 +32,7 @@ class AuthenticatedSessionController extends Controller
         // return redirect()->intended(RouteServiceProvider::HOME);
         $credentials = $request->only('email', 'password');
 
-        if (Auth::attempt($credentials) && Auth::user()->utype == 'USR') {
+        if (Auth::attempt($credentials) && Auth::user()->utype == 'CUS') {
             // Đăng nhập thành công, chuyển hướng đến trang khách hàng
             return redirect()->intended('/')->with('message', 'Welcome to Feliciano Restaurant');
         }

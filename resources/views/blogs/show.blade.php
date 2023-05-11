@@ -1,4 +1,6 @@
 <x-guest-layout>
+  @section('title', 'Single Stories - Feliciano Restaurant')
+
     <x-hero-card namePage="Post {{$post->title}}" bg="images/lunch-4.jpg"  />
     <section class="ftco-section">
         <div class="container">

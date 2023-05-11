@@ -9,6 +9,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Name</th>
+                                    <th scope="col">UserName</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Phone</th>
                                     <th scope="col">Date</th>
@@ -22,6 +23,7 @@
                                 @foreach ($reservations as $reservation)
                                 <tr>
                                     <td>{{$reservation->name}}</td>
+                                    <td>{{$reservation->user->name}}</td>
                                     <td>{{$reservation->email}}</td>
                                     <td>{{$reservation->tel_number}}</td>
                                     <td>{{$reservation->res_date}}</td>

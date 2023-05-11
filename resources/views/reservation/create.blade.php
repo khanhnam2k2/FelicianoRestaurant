@@ -18,7 +18,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" name="name" class="form-control" placeholder="Your Name">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" value="{{old('name')}}">
                     @error('name')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
@@ -27,7 +27,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" name="email" class="form-control" placeholder="Your Email">
+                    <input type="email" name="email" class="form-control" placeholder="Your Email" value="{{old('email')}}">
                     @error('email')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
@@ -36,7 +36,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="">Phone</label>
-                    <input type="text" name="tel_number" class="form-control" placeholder="Phone">
+                    <input type="text" name="tel_number" class="form-control" placeholder="Phone" value="{{old('tel_number')}}">
                     @error('tel_number')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
@@ -45,7 +45,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                       <label for="guest_number">Guest number</label>
-                      <input type="number" name="guest_number" min="1" max="20" class="form-control" placeholder="Guest number">
+                      <input type="number" name="guest_number" min="1" max="20" class="form-control" placeholder="Guest number"
+                      value="{{old('guest_number')}}">
                       @error('guest_number')
                       <div class="text-danger">{{ $message }}</div>
                   @enderror
@@ -54,7 +55,9 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label for="">Reservation Date</label>
-                    <input type="datetime-local"name="res_date" class="form-control"  placeholder="Date">
+                    <input type="datetime-local"name="res_date" class="form-control"  placeholder="Date"
+                    value="{{ \Carbon\Carbon::now()->format('Y-m-d\TH:i') }}"
+                    >
                     @error('res_date')
                       <div class="text-danger">{{ $message }}</div>
                   @enderror
@@ -63,7 +66,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="">Message</label>
-                      <textarea name="message" class="w-100" rows="4"></textarea>
+                      <textarea name="message" class="w-100" rows="4">{{old('message')}}</textarea>
                       @error('message')
                       <div class="text-danger">{{ $message }}</div>
                   @enderror

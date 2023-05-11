@@ -16,7 +16,8 @@
                     </div>
                     <div class=" mb-3">
                         <label for="image"  class="form-babel">Image</label>
-                        <input class="form-control bg-dark @error('image') is-invalid @enderror" type="file" id="image" name="image">
+                        <input class="form-control bg-dark @error('image') is-invalid @enderror" type="file" id="image" name="image"
+                        value="{{old('image')}}">
                         @error('image')
                         <div class="text-danger">{{$message}}</div>
                     @enderror
@@ -37,6 +38,9 @@
                                 <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
                         </select>
+                        @error('categories')
+                        <div class="text-danger">{{$message}}</div>
+                    @enderror
                     </div>
                     <div class="form-floating">
                         <textarea class="form-control" name="description" placeholder="Description for menu"
