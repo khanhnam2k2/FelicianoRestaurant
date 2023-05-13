@@ -52,6 +52,11 @@
             <script>swal("{{session()->get('warning')}}", "", "warning");</script>
         </div>
         @endif
+        @if(session()->has('message'))
+        <div >
+            <script>swal("{{session()->get('message')}}", "", "success");</script>
+        </div>
+        @endif
     </div>
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Spinner Start -->

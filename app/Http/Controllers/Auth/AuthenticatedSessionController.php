@@ -38,7 +38,7 @@ class AuthenticatedSessionController extends Controller
         }
         if (Auth::attempt($credentials) && Auth::user()->utype == 'ADM') {
             // Đăng nhập thành công, chuyển hướng đến trang nhân viên
-            return redirect()->intended('/admin');
+            return redirect()->intended('/admin')->with('message', 'Welcome to Admin Feliciano Restaurant');
         }
         // Đăng nhập không thành công, chuyển hướng về trang đăng nhập
         return redirect('/login')->withErrors(['email' => 'Email or password is incorrect!']);

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class AuthAdmin
+class RedirectIfNotAdmin
 {
     /**
      * Handle an incoming request.
@@ -16,10 +16,10 @@ class AuthAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->utype == 'ADM') {
-            return $next($request);
+        if (!Auth::check() || Auth::user()->utype !== 'ADM') {
+            return redirect()->route('login');
         }
 
-        return redirect('/');
+        return $next($request);
     }
 }

@@ -25,7 +25,7 @@
                     <i class="fa-solid fa-bell fa-3x text-primary" >
                     </i>
                   <div class="ms-2">
-                      <a href="{{route('admin.reservation.index')}}" class="mb-2">Reservation Today</a>
+                      <a href="{{route('admin.reservation.index')}}" class="mb-2">Reservation Today </a>
                       <h6 class="mb-0">{{count($reservations_today)>0 ? "Have ".count($reservations_today) : "No"}} Reservation  </h6>
                   </div>
               </div>
@@ -46,44 +46,89 @@
 
   <!-- Recent Sales Start -->
   <div class="container-fluid pt-4 px-4">
-      <div class="bg-secondary text-center rounded p-4">
-          <div class="d-flex align-items-center justify-content-between mb-4">
-              <h6 class="mb-0">Table Reservation Pending </h6>
-              <a href="{{route('admin.reservation.index')}}">View All</a>
-          </div>
-          @if (count($reservations_pending) >0)
-          <div class="table-responsive">
-              <table class="table text-start align-middle table-bordered table-hover mb-0">
-                  <thead>
-                      <tr class="text-white">
-                          <th scope="col">Date</th>
-                          {{-- <th scope="col">Invoice</th> --}}
-                          <th scope="col">Customer</th>
-                          {{-- <th scope="col">Amount</th> --}}
-                          <th scope="col">Guest Number</th>
-                          <th scope="col">Action</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                    @foreach ($reservations_pending as $reservation)
-                    <tr>
-                        <td>{{$reservation->res_date}}</td>
-                        {{-- <td>INV-0123</td> --}}
-                        <td>{{$reservation->name}}</td>
-                        {{-- <td>$123</td> --}}
-                        <td>{{$reservation->guest_number}}</td>
-                        <td><a class="btn btn-sm btn-primary" href="{{route('admin.reservation.show',$reservation->id)}}">Process</a></td>
-                    </tr>
-                        
-                    @endforeach
-                     
-                  </tbody>
-              </table>
-          </div>
-           @else
-            <h2>No table reservations are pending!!</h2>   
-          @endif
-      </div>
+    <div class="row g-4">
+        <div class="col-sm-12 col-md-6">
+            <div class="bg-secondary text-center rounded p-4">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h5 class="mb-0 text-primary ">Table Reservation Pending🛎️🛎️🛎️ </h5>
+                    <a href="{{route('admin.reservation.index')}}">View All</a>
+                </div>
+                @if (count($reservations_pending) >0)
+                <div class="table-responsive">
+                    <table class="table text-start align-middle table-bordered table-hover mb-0">
+                        <thead>
+                            <tr class="text-white">
+                                <th scope="col">Date</th>
+                                {{-- <th scope="col">Invoice</th> --}}
+                                <th scope="col">Customer</th>
+                                {{-- <th scope="col">Amount</th> --}}
+                                <th scope="col">Guest Number</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          @foreach ($reservations_pending as $reservation)
+                          <tr>
+                              <td>{{$reservation->res_date}}</td>
+                              {{-- <td>INV-0123</td> --}}
+                              <td>{{$reservation->name}}</td>
+                              {{-- <td>$123</td> --}}
+                              <td>{{$reservation->guest_number}}</td>
+                              <td><a class="btn btn-sm btn-primary" href="{{route('admin.reservation.show',$reservation->id)}}">Process</a></td>
+                          </tr>
+                              
+                          @endforeach
+                           
+                        </tbody>
+                    </table>
+                </div>
+                 @else
+                  <h2>No pending table orders🥲</h2>   
+                @endif
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <div class="bg-secondary text-center rounded p-4">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h5 class="mb-0 text-primary ">Table Reservation Confirmed  </h5>
+                    <a href="{{route('admin.reservation.index')}}">View All</a>
+                </div>
+                @if (count($reservations_confirmed) >0)
+                <div class="table-responsive">
+                    <table class="table text-start align-middle table-bordered table-hover mb-0">
+                        <thead>
+                            <tr class="text-white">
+                                <th scope="col">Date</th>
+                                {{-- <th scope="col">Invoice</th> --}}
+                                <th scope="col">Customer</th>
+                                {{-- <th scope="col">Amount</th> --}}
+                                <th scope="col">Guest Number</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          @foreach ($reservations_confirmed as $reservation)
+                          <tr>
+                              <td>{{$reservation->res_date}}</td>
+                              {{-- <td>INV-0123</td> --}}
+                              <td>{{$reservation->name}}</td>
+                              {{-- <td>$123</td> --}}
+                              <td>{{$reservation->guest_number}}</td>
+                              <td><a class="btn btn-sm btn-primary" href="{{route('admin.reservation.show',$reservation->id)}}">Process</a></td>
+                          </tr>
+                              
+                          @endforeach
+                           
+                        </tbody>
+                    </table>
+                </div>
+                 @else
+                  <h2>No confirmed table orders </h2>   
+                @endif
+            </div>
+        </div>
+    </div>
+   
   </div>
   <!-- Recent Sales End -->
 

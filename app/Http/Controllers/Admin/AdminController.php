@@ -19,12 +19,15 @@ class AdminController extends Controller
         $reservations_today = Reservation::whereDate('res_date', Carbon::today())
             ->where('status', 'confirmed')
             ->get();
-        $reservations_pending = Reservation::where('status', 'pending')->get();
+        $reservations_confirmed = Reservation::where('status', 'confirmed')->latest()->get();
+
+        $reservations_pending = Reservation::where('status', 'pending')->latest()->get();
         $posts = Post::where('is_published', '1')->get();
         $rencent_posts = Post::where('created_at', '>=', Carbon::now()->subDay(7))->get();
         $total_customers = User::where('utype', 'CUS')->count();
         return view('admin.index', [
             'menus' => $menus,
+            'reservations_confirmed' => $reservations_confirmed,
             'reservations_today' => $reservations_today,
             'reservations_pending' => $reservations_pending,
             'posts' => $posts,

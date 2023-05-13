@@ -30,18 +30,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('index');
 Route::get('/about', [WelcomeController::class, 'about'])->name('about');
-// Route::get('/services', [WelcomeController::class, 'services'])->name('services');
-// Route::get('/our-team', [WelcomeController::class, 'ourTeam'])->name('ourTeam');
 Route::get('/contact', [WelcomeController::class, 'contact'])->name('contact');
 Route::post('/contact', [WelcomeController::class, 'storeContact'])->name('contact.store');
 Route::get('/posts', [FrontendPostController::class, 'index'])->name('post.index');
 Route::get('/posts/{post}', [FrontendPostController::class, 'show'])->name('post.show');
 
-
-
-
 Route::get('/menus/search', [FrontendMenuController::class, 'search'])->name('menus.search');
-
 Route::get('/menus', [FrontendMenuController::class, 'index'])->name('menus.index');
 Route::get('/menus/{menu}', [FrontendMenuController::class, 'show'])->name('menus.show');
 Route::middleware('auth')->group(function () {
@@ -51,11 +45,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/reservation/{reservation}', [FrontendReservationController::class, 'delete'])->name('reservation.delete');
 });
 
-// Route::get('/thankyou', [WelcomeController::class, 'thankyou'])->name('thankyou');
 
 
 
-Route::middleware('admin')->name('admin.')->prefix('admin')->group(function () {
+Route::middleware(['admin'])->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('index');
     Route::resource('/categories', CategoryController::class);
     Route::get('/menus/search', [MenuController::class, 'search'])->name('menus.search');
@@ -69,17 +62,16 @@ Route::middleware('admin')->name('admin.')->prefix('admin')->group(function () {
     Route::get('/customers', [UserController::class, 'index'])->name('customers.index');
     Route::delete('/customers/{user}', [UserController::class, 'destroy'])->name('customers.destroy');
 
-    // Route::delete('/reservation/{reservation}', [ReservationController::class, 'destroy'])->name('reservation.destroy');
     Route::get('ckeditor', [CkeditorController::class, 'index']);
     Route::post('ckeditor/upload', [CkeditorController::class, 'upload'])->name('ckeditor.upload');
 });
 
 
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 
 require __DIR__ . '/auth.php';
