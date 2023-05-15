@@ -71,27 +71,35 @@
           @else
               <h2 class="text-center">Today our restaurant does not have a special menu</h2>
           @endif
-        
+          <div class="d-flex justify-content-center align-items-center pt-5" style="padding-right: 30px">
+            <a href="{{route('menus.index')}}" class="btn btn-primary ">View all</a>
           </div>
+        </div>
       </section>
       
       {{-- chef --}}
           <section class="ftco-section">
-              <div class="container">
-                  <div class="row justify-content-center mb-5 pb-2">
-            <div class="col-md-12 text-center heading-section ftco-animate">
-                <span class="subheading">Chef</span>
-              <h2 class="mb-4">Our Master Chef</h2>
-            </div>
-          </div>	
-                  <div class="row "id="demo">
-                        @foreach ($teams as $team)
-                        <x-team-card :team=$team/>
-                        @endforeach
-                  </div>
-              </div>
+             <div class="container">
+              <div class="row justify-content-center mb-5 pb-2">
+                <div class="col-md-12 text-center heading-section ftco-animate">
+                    <span class="subheading">Our Chef</span>
+                  <h2 class="mb-4">Feliciano Restaurant</h2>
+                </div>
+              </div>	
+                      <div class="row "id="demo">
+                            @foreach ($teams as $team)
+                            <x-team-card :team=$team/>
+                            @endforeach
+                      </div>
+             </div>
           </section>
   
+
+
+          {{-- Gallery --}}
+         @include('partials._gallery')
+
+
           {{-- Book table --}}
           <section class="ftco-section img" style="background-image: url(images/bg_3.jpg)" data-stellar-background-ratio="0.5">
             <div class="container">
@@ -170,13 +178,15 @@
               </div>
             </div>
           </section>
+
+
           {{-- blogs --}}
           <section class="ftco-section bg-light">
               <div class="container">
                   <div class="row justify-content-center mb-5">
             <div class="col-md-7 text-center heading-section ftco-animate">
                 <span class="subheading">Blog</span>
-              <h2 class="mb-4">Recent Posts</h2>
+              <h2 class="mb-4">Feliciano Restaurant</h2>
             </div>
           </div>
                   <div class="row" >

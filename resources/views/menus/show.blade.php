@@ -25,7 +25,7 @@
           @foreach ($other_menus as $menu)
           <div class="col-md-3">
             <div class="card">
-              <img src="{{Storage::url($menu->image)}}" alt="{{$menu->name}}" class="card-img-top" style="height:200px">
+              <img src="{{Storage::url($menu->image)}}" alt="{{$menu->name}}" class="card-img-top" style="height:200px;object-fit:cover">
               <div class="card-body">
                 <h5 class="card-title">{{$menu->name}}</h5>
                 <a href="{{route('menus.show',$menu->id)}}" class="btn btn-primary">See Detail</a>

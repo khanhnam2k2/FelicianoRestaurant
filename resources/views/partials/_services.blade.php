@@ -4,7 +4,7 @@
         <div class="row justify-content-center mb-5 pb-2">
   <div class="col-md-12 text-center heading-section ftco-animate">
       <span class="subheading">Services</span>
-    <h2 class="mb-4">Catering Services</h2>
+    <h2 class="mb-4">Feliciano Restaurant</h2>
   </div>
 </div>
 <div class="row">

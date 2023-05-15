@@ -16,10 +16,12 @@ class RedirectIfNotAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!Auth::check() || Auth::user()->utype !== 'ADM') {
-            return redirect()->route('login');
-        }
 
-        return $next($request);
+        if (Auth::check() && Auth::user()->utype == 'ADM') {
+            return $next($request);
+        }
+        return back()->with('danger', 'You must be admin');
+
+        // return back()->with('danger', "No access");
     }
 }

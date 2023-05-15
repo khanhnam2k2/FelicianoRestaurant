@@ -17,14 +17,14 @@ class MenuController extends Controller
     public function index(Request $request)
     {
 
-        $menus = Menu::orderBy('id', 'desc')->simplePaginate(3);
+        $menus = Menu::orderBy('id', 'desc')->simplePaginate(4);
 
         return view('admin.menus.index', compact('menus'));
     }
     public function search(Request $request)
     {
         $query = $request->input('query');
-        $menus = Menu::where('name', 'LIKE', "%$query%")->orderBy('id', 'desc')->simplePaginate(3);
+        $menus = Menu::where('name', 'LIKE', "%$query%")->orderBy('id', 'desc')->simplePaginate(4);
         return view('admin.menus.index', compact('menus'));
     }
     /**

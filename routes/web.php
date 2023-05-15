@@ -38,7 +38,7 @@ Route::get('/posts/{post}', [FrontendPostController::class, 'show'])->name('post
 Route::get('/menus/search', [FrontendMenuController::class, 'search'])->name('menus.search');
 Route::get('/menus', [FrontendMenuController::class, 'index'])->name('menus.index');
 Route::get('/menus/{menu}', [FrontendMenuController::class, 'show'])->name('menus.show');
-Route::middleware('auth')->group(function () {
+Route::middleware('user')->group(function () {
     Route::get('/reservation', [FrontendReservationController::class, 'create'])->name('reservation');
     Route::post('/reservation', [FrontendReservationController::class, 'store'])->name('reservation.store');
     Route::get('/reservation/show', [FrontendReservationController::class, 'show'])->name('reservation.show');

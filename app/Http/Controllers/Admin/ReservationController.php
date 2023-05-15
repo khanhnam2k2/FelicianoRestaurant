@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\BookingCanceled;
 use App\Mail\BookingConfirmed;
 use App\Models\Reservation;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
