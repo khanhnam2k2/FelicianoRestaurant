@@ -13,10 +13,10 @@
           </div>
           <div class="col-sm-6 col-xl-3">
               <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                <i class="fa-solid fa-user-group fa-3x text-primary"></i>
+                <i class="fa-solid fa-star fa-3x text-primary"></i>
                   <div class="ms-2">
-                    <a href="{{route('admin.customers.index')}}" class="mb-2">Customers</a>
-                      <h6 class="mb-0">Have {{$total_customers}} Account</h6>
+                    <a href="{{route('admin.customers.index')}}" class="mb-2">Review Pending</a>
+                      <h6 class="mb-0">Have {{count($reviews)}} Reviews</h6>
                   </div>
               </div>
           </div>

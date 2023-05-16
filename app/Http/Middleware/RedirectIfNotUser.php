@@ -16,11 +16,10 @@ class RedirectIfNotUser
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!Auth::check()) {
-            return redirect()->route('login');
+        if (Auth::check() && Auth::user()->utype == 'CUS') {
+            return $next($request);
         }
 
-
-        return $next($request);
+        return back()->with('danger', 'You must be logged in as a user');;
     }
 }

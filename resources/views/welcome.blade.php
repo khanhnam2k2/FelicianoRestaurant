@@ -151,7 +151,8 @@
                       <div class="col-md-12">
                         <div class="form-group">
                           <label for="res_date">Reservation Date</label>
-                          <input type="datetime-local" name="res_date" class="form-control" placeholder="Date">
+                          <input type="datetime-local" name="res_date" class="form-control" placeholder="Date"
+                          value="{{ \Carbon\Carbon::now()->format('Y-m-d\TH:i') }}">
                           @error('res_date')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
@@ -179,6 +180,95 @@
             </div>
           </section>
 
+
+          <section class="ftco-section testimony-section img pb-0">
+            <div class="overlay"></div>
+            <div class="container">
+              <div class="row justify-content-center mb-5">
+                <div class="col-md-12 text-center heading-section ftco-animate">
+                  <span class="subheading">Testimony</span>
+                  <h2 class="mb-4">Happy Customer</h2>
+                </div>
+              </div>
+              <div class="row ftco-animate justify-content-center">
+                <div class="col-md-12">
+                  <div class="carousel-testimony owl-carousel ftco-owl">
+                    @foreach ($reviews as $review)
+                    <div class="item">
+                      <div class="testimony-wrap text-center pb-5">
+                        <div class="user-img mb-4" style="background-image: url({{asset('images/smile.jpg')}})">
+                          <span class="quote d-flex align-items-center justify-content-center">
+                            <i class="icon-quote-left"></i>
+                          </span>
+                        </div>
+                        <div class="text p-3">
+                          <p class="mb-4">{{$review->content}}</p>
+                          <p class="name" style="color:#c8a97e">
+                            @for($i=1; $i<=5; $i++)
+                            @if($i <= $review->rating)
+                                <i class="fas fa-star"></i>
+                            @else
+                                <i class="far fa-star"></i>
+                            @endif
+                           @endfor</p>
+                          <span class="position">{{$review->user->name}}</span>
+                        </div>
+                      </div>
+                    </div>
+                        
+                    @endforeach
+                    
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+          </section>
+
+          <div class="d-flex justify-content-center">
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary mb-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Leave your review here💕💕💕
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Review</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">✖️</button>
+      </div>
+      <div class="modal-body">
+
+        <form method="POST" action="{{ route('reviews.store') }}">
+            @csrf
+        
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea id="content" name="content" class="form-control">{{ old('content') }}</textarea>
+                @error('content')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            </div>
+        
+            <div class="form-group">
+                <label for="rating">Rating</label>
+                <input type="number" id="rating" name="rating" class="form-control" min="1" max="5" value="{{ old('rating') }}">
+                @error('rating')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+     
+    </div>
+  </div>
+</div>
+          </div>
 
           {{-- blogs --}}
           <section class="ftco-section bg-light">
@@ -216,4 +306,6 @@
               </div>
           </section>
         
+
+
 </x-guest-layout>

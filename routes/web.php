@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ContactController as AdminContactController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ReservationController;
+use App\Http\Controllers\Admin\ReviewController as AdminReviewController;
 use App\Http\Controllers\Admin\SlideController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\UserController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\CkeditorController;
 use App\Http\Controllers\Frontend\MenuController as FrontendMenuController;
 use App\Http\Controllers\Frontend\PostController as FrontendPostController;
 use App\Http\Controllers\Frontend\ReservationController as FrontendReservationController;
+use App\Http\Controllers\Frontend\ReviewController;
 use App\Http\Controllers\Frontend\WelcomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -38,7 +40,9 @@ Route::get('/posts/{post}', [FrontendPostController::class, 'show'])->name('post
 Route::get('/menus/search', [FrontendMenuController::class, 'search'])->name('menus.search');
 Route::get('/menus', [FrontendMenuController::class, 'index'])->name('menus.index');
 Route::get('/menus/{menu}', [FrontendMenuController::class, 'show'])->name('menus.show');
+
 Route::middleware('user')->group(function () {
+    Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store');
     Route::get('/reservation', [FrontendReservationController::class, 'create'])->name('reservation');
     Route::post('/reservation', [FrontendReservationController::class, 'store'])->name('reservation.store');
     Route::get('/reservation/show', [FrontendReservationController::class, 'show'])->name('reservation.show');
@@ -61,6 +65,18 @@ Route::middleware(['admin'])->name('admin.')->prefix('admin')->group(function ()
     Route::resource('/reservation', ReservationController::class);
     Route::get('/customers', [UserController::class, 'index'])->name('customers.index');
     Route::delete('/customers/{user}', [UserController::class, 'destroy'])->name('customers.destroy');
+
+
+
+
+    Route::get('/reviews', [AdminReviewController::class, 'index'])->name('reviews.index');
+    Route::patch('/reviews/{review}/approve', [AdminReviewController::class, 'approve'])->name('reviews.approve');
+    Route::patch('/reviews/{review}/notApprove', [AdminReviewController::class, 'notApprove'])->name('reviews.notApprove');
+
+
+
+
+
 
     Route::get('ckeditor', [CkeditorController::class, 'index']);
     Route::post('ckeditor/upload', [CkeditorController::class, 'upload'])->name('ckeditor.upload');

@@ -81,6 +81,7 @@
                     <a href="{{route('admin.posts.index')}}" class="nav-item nav-link {{(request()->is('admin/posts')) ? 'active' : ''}} "><i class="fa-solid fa-blog me-2"></i>All of Posts</a>
                     <a href="{{route('admin.slides.index')}}" class="nav-item nav-link {{(request()->is('admin/slides')) ? 'active' : ''}} "><i class="fa-solid fa-sliders me-2"></i>Slides</a>
                     <a href="{{route('admin.reservation.index')}}" class="nav-item nav-link {{(request()->is('admin/reservation')) ? 'active' : ''}} "><i class="fa-solid fa-bell me-2"></i>Reservations</a>
+                    <a href="{{route('admin.reviews.index')}}" class="nav-item nav-link {{(request()->is('admin/reviews')) ? 'active' : ''}} "><i class="fa-solid fa-star"></i>Reviews</a>
                     <a href="{{route('admin.contact.index')}}" class="nav-item nav-link {{(request()->is('admin/contact')) ? 'active' : ''}} "><i class="fa-solid fa-address-book me-2"></i>Contact</a>
                     <a href="{{route('admin.teams.index')}}" class="nav-item nav-link {{(request()->is('admin/teams')) ? 'active' : ''}} "><i class="fa-solid fa-user-group"></i>Chefs</a>
                     <a href="{{route('admin.customers.index')}}" class="nav-item nav-link {{(request()->is('admin/customers')) ? 'active' : ''}} "><i class="fa-solid fa-people-group me-2"></i>Customer</a>

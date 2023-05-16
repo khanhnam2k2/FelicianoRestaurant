@@ -20,7 +20,7 @@ class RedirectIfNotAdmin
         if (Auth::check() && Auth::user()->utype == 'ADM') {
             return $next($request);
         }
-        return back()->with('danger', 'You must be admin');
+        return back()->with('danger', 'You must be logged in as an administrator');
 
         // return back()->with('danger', "No access");
     }
