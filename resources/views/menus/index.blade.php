@@ -30,8 +30,8 @@
                   <div class="row no-gutters d-flex align-items-stretch">
                       @foreach ($menus as $menu)
                       <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
-                          <div class="menus d-sm-flex ftco-animate align-items-stretch mt-4 mr-4">
-                        <div class="menu-img img  " style="background-image: url({{Storage::url($menu->image)}});"></div>
+                          <div class="menus d-sm-flex ftco-animate align-items-stretch mt-3">
+                        <div class="menu-img img {{$loop->index % 2 == 1 ? 'order-md-last' : ''}}  " style="background-image: url({{Storage::url($menu->image)}});"></div>
                         <div class="text d-flex align-items-center">
                                           <div>
                                 <div class="d-flex">
@@ -63,8 +63,8 @@
                         <div class="row no-gutters d-flex align-items-stretch">
                             @foreach ($category->menus as $menu)
                             <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
-                                <div class="menus d-sm-flex ftco-animate align-items-stretch mt-4 mr-4">
-                              <div class="menu-img img " style="background-image: url({{Storage::url($menu->image)}});"></div>
+                                <div class="menus d-sm-flex ftco-animate align-items-stretch mt-3">
+                              <div class="menu-img img {{$loop->index % 2 == 1  ? 'order-md-last' : ''}} " style="background-image: url({{Storage::url($menu->image)}});"></div>
                               <div class="text d-flex align-items-center">
                                                 <div>
                                       <div class="d-flex">

@@ -7,26 +7,26 @@
                     <div class="row h-100 p-4 ">
                         <div class="col-md-6">
                                 <div class="form-group">
-                                    <strong>Title:</strong>
+                                    <strong class="text-primary">Title:</strong>
                                     {{$post->title}}
                                 </div>
                         </div>
                         <div class="col-md-6">
                                 <div class="form-group">
-                                    <strong>Excerpt:</strong>
+                                    <strong class="text-primary">Excerpt:</strong>
                                     {{$post->excerpt ?? 'No excerpt'}}
                                 </div>
                         </div>
                         <div class="col-md-6">
                                 <div class="form-group">
-                                    <strong>Image:</strong>
-                                    <img src="{{Storage::url($post->image)}}" width="100%" alt="">
+                                    <strong class="text-primary">Image:</strong>
+                                    <img src="{{Storage::url($post->image)}}" width="100%" height="400"  style="object-fit: cover" alt="">
                                 </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <strong>Body:</strong>
-                                {{$post->body}}
+                                <strong class="text-primary">Body:</strong>
+                                {!!$post->body!!}
                             </div>
                     </div>
                     <div class="col-md-12">

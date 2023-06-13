@@ -14,11 +14,4 @@ class Menu extends Model
     {
         return $this->belongsToMany(Category::class);
     }
-    public function toSearchableArray()
-    {
-        return [
-            'name' => $this->name,
-
-        ];
-    }
 }

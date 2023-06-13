@@ -24,6 +24,6 @@ class ContactController extends Controller
     public function destroy(Contact $contact)
     {
         $contact->delete();
-        return to_route('admin.contact.index')->with('danger', 'Contact deleted successfully.');
+        return to_route('admin.contact.index')->with('success', 'Contact deleted successfully.');
     }
 }

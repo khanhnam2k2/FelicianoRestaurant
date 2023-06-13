@@ -62,7 +62,7 @@
                     </div>
 
                   <form action="{{route('login')}}" method="POST">
-                    @csrf
+                    @csrf 
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control @error('email') is-invalid @enderror"
                          name="email" id="email" placeholder="name@example.com">

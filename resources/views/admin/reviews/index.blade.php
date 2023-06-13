@@ -25,24 +25,28 @@
                                     <td>{{$review->approved == 1 ? "Approved" : "Not Approved"}}</td>
                                    
                                     <td>
-                                       <div class="d-flex justify-content-between">
-                                        <form class=""
-                                            method="POST"
-                                            action="{{route('admin.reviews.approve',$review->id)}}"
-                                            onsubmit="return confirm('You definitely want this review to show up?')">
-                                            @csrf
-                                            @method('PATCH')
-                                            <button class="btn btn-info" type="submit"><i class="fa-solid fa-check"></i></button>
-                                        </form>
-                                        <form class=""
-                                        method="POST"
-                                        action="{{route('admin.reviews.notApprove',$review->id)}}"
-                                        onsubmit="return confirm('You definitely want this review hidden?')">
-                                        @csrf
-                                        @method('PATCH')
-                                        <button class="btn btn-danger" type="submit"><i class="fa-solid fa-circle-xmark"></i></button>
-                                    </form>
-                                       </div>
+                                       @if ($review->approved == 1)
+                                       <form class=""
+                                       method="POST"
+                                       action="{{route('admin.reviews.notApprove',$review->id)}}"
+                                       onsubmit="return confirm('You definitely want this review hidden?')">
+                                       @csrf
+                                       @method('PATCH')
+                                       <button class="btn btn-danger" type="submit"><i class="fa-solid fa-circle-xmark"></i></button>
+                                   </form>
+                                       @else
+                                       <form class=""
+                                       method="POST"
+                                       action="{{route('admin.reviews.approve',$review->id)}}"
+                                       onsubmit="return confirm('You definitely want this review to show up?')">
+                                       @csrf
+                                       @method('PATCH')
+                                       <button class="btn btn-info" type="submit"><i class="fa-solid fa-check"></i></button>
+                                   </form>
+                                       @endif
+                                       
+                                       
+                                      
                                         
                                        
                                     </td>

@@ -1,5 +1,5 @@
 <x-guest-layout>
-  @section('title', 'Single Stories - Feliciano Restaurant')
+  @section('title', $post->title)
 
     <x-hero-card namePage="Post {{$post->title}}" bg="images/lunch-4.jpg"  />
     <section class="ftco-section">
@@ -35,9 +35,9 @@
           <h3>Popular Articles</h3>
           @foreach ($posts as $post)
           <div class="block-21 mb-4 d-flex">
-            <a class="blog-img mr-4" style="background-image: url({{Storage::url($post->image)}});"></a>
+            <a href="{{route('post.show',$post->id)}}" class="blog-img mr-4" style="background-image: url({{Storage::url($post->image)}});"></a>
             <div class="text">
-              <h3 class="heading"><a href="#">{{$post->title}}</a></h3>
+              <h3 class="heading"><a href="{{route('post.show',$post->id)}}">{{$post->title}}</a></h3>
               <div class="meta">
                 <div><a href="#"><span class="icon-calendar"></span>{{$post->created_at->format('d-m-Y')}}</a></div>
                 <div><a href="#"><span class="icon-person"></span> {{$post->user->name}}</a></div>

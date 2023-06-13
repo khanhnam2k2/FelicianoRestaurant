@@ -33,8 +33,12 @@ class ReservationController extends Controller
         $reservation->save();
         if ($reservation->status == 'confirmed') {
             Mail::to($reservation->email)->send(new BookingConfirmed($reservation));
+            return redirect()->route('admin.index')
+                ->with('success', 'The table order has been confirmed successfully!');
         } else if ($reservation->status == 'canceled') {
             Mail::to($reservation->email)->send(new BookingCanceled($reservation));
+            return redirect()->route('admin.index')
+                ->with('success', 'Table reservation has been canceled successfully!');
         };
         return redirect()->route('admin.index')
             ->with('success', 'Table reservation status has been successfully updated');
@@ -43,6 +47,6 @@ class ReservationController extends Controller
     {
         $reservation->delete();
 
-        return to_route('admin.reservation.index')->with('danger', 'Reservation deleted successfully');
+        return to_route('admin.reservation.index')->with('success', 'Reservation deleted successfully');
     }
 }

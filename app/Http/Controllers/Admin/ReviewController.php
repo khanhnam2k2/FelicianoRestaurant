@@ -21,6 +21,6 @@ class ReviewController extends Controller
     public function notApprove(Review $review)
     {
         $review->update(['approved' => false]);
-        return redirect()->back()->with('success', 'Successful review approval');
+        return redirect()->back()->with('success', 'Successful review notapproval');
     }
 }

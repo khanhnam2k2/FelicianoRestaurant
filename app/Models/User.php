@@ -47,10 +47,10 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
-    public function bookings()
-    {
-        return $this->hasMany(Booking::class);
-    }
+    // public function bookings()
+    // {
+    //     return $this->hasMany(Booking::class);
+    // }
     public function reservations()
     {
         return $this->hasMany(Reservation::class);

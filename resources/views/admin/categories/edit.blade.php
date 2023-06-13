@@ -15,17 +15,7 @@
                         <div class="text-danger">{{$message}}</div>
                     @enderror
                     </div>
-                    <div class=" mb-3">
-                        <div class="">
-                            <img src="{{Storage::url($category->image)}}" height="300px" style="object-fit: cover" alt="">
-                        </div>
-                        <label for="image"  class="form-babel">Image</label>
-                        <input class="form-control bg-dark @error('image') is-invalid @enderror"
-                         type="file" id="image" name="image" >
-                        @error('image')
-                        <div class="text-danger">{{$message}}</div>
-                    @enderror
-                    </div>
+                   
                     <div class="form-floating">
                         <textarea class="form-control" name="description" placeholder="Description for category"
                             id="description" style="height: 100px;">{{$category->description}}</textarea>

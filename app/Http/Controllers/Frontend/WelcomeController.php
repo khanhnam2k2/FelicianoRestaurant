@@ -17,7 +17,7 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        // $menus = Menu::all();
+
         $categories = Category::all();
         $teams = Team::inRandomOrder()->get();
         $specials = Category::where('name', 'Specials')->first();

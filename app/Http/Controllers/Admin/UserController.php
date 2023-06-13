@@ -17,6 +17,6 @@ class UserController extends Controller
     {
         $user->delete();
 
-        return to_route('admin.customers.index')->with('success', 'Người dùng đã được xóa thành công!');
+        return to_route('admin.customers.index')->with('success', 'User account has been deleted successfully.');
     }
 }

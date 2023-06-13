@@ -1,4 +1,6 @@
 <x-guest-layout>
+  @section('title', $menu->name)
+
     <x-hero-card namePage="Detail {{$menu->name}}"  bg="images/bg_4.jpg"/>
 
     <div class="container mt-5 mb-5">
@@ -9,7 +11,7 @@
           <div class="col-md-6">
             <h1>{{$menu->name}}</h1>
             <p>{{$menu->description}}</p>
-            <p>Price: {{$menu->price}}</p>
+            <p>Price: {{$menu->price}}$</p>
             <div class="">
                 <a class="btn btn-primary" href="{{route('reservation')}}">Book Table Now</a>
             </div>

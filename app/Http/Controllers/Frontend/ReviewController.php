@@ -22,6 +22,6 @@ class ReviewController extends Controller
             'user_id' => Auth::user()->id,
         ]);
 
-        return redirect()->route('index')->with('message', 'Submit a successful review.');
+        return redirect()->route('index')->with('message', 'Thank you for leaving a review');
     }
 }

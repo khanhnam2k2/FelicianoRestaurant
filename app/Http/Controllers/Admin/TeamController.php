@@ -90,6 +90,6 @@ class TeamController extends Controller
     {
         Storage::delete($team->image);
         $team->delete();
-        return to_route('admin.teams.index')->with('danger', 'Chef deleted successfully.');
+        return to_route('admin.teams.index')->with('success', 'Chef deleted successfully.');
     }
 }

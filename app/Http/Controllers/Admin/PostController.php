@@ -34,7 +34,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' =>  'required',
+            'title' =>  'required|unique:posts',
             'image' => 'required|image',
             'body' => 'required'
         ]);
@@ -101,6 +101,6 @@ class PostController extends Controller
     {
         Storage::delete($post->image);
         $post->delete();
-        return to_route('admin.posts.index')->with('danger', 'Post deleted successfully.');
+        return to_route('admin.posts.index')->with('success', 'Post deleted successfully.');
     }
 }

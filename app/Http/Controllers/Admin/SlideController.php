@@ -90,6 +90,6 @@ class SlideController extends Controller
     {
         Storage::delete($slide->image);
         $slide->delete();
-        return to_route('admin.slides.index')->with('danger', 'Slide deleted successfully.');
+        return to_route('admin.slides.index')->with('success', 'Slide deleted successfully.');
     }
 }

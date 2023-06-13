@@ -15,18 +15,18 @@
               <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                 <i class="fa-solid fa-star fa-3x text-primary"></i>
                   <div class="ms-2">
-                    <a href="{{route('admin.customers.index')}}" class="mb-2">Review Pending</a>
+                    <a href="{{route('admin.reviews.index')}}" class="mb-2">Review Pending</a>
                       <h6 class="mb-0">Have {{count($reviews)}} Reviews</h6>
                   </div>
               </div>
           </div>
           <div class="col-sm-6 col-xl-3">
               <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-                    <i class="fa-solid fa-bell fa-3x text-primary" >
+                    <i class="fa-solid fa-people-group fa-3x text-primary" >
                     </i>
                   <div class="ms-2">
-                      <a href="{{route('admin.reservation.index')}}" class="mb-2">Reservation Today </a>
-                      <h6 class="mb-0">{{count($reservations_today)>0 ? "Have ".count($reservations_today) : "No"}} Reservation  </h6>
+                      <a href="{{route('admin.customers.index')}}" class="mb-2">Customer Account</a>
+                      <h6 class="mb-0">Have {{count($customersaccounts)}} Account</h6>
                   </div>
               </div>
           </div>

@@ -4,7 +4,7 @@
     <title>@yield('title')</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+    <link rel="icon" type="image/png" href="{{asset('images/Feliciano.png')}}">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -36,9 +36,9 @@
           <script>swal("{{session()->get('message')}}", "", "success");</script>
       </div>
       @endif
-      @if(session()->has('danger'))
+      @if(session()->has('warning'))
       <div >
-          <script>swal("{{session()->get('danger')}}", "", "error");</script>
+          <script>swal("{{session()->get('warning')}}", "", "warning");</script>
       </div>
       @endif
       

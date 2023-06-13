@@ -9,8 +9,8 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col"> Name</th>
-                                    <th scope="col">Description</th>
+                                    <th scope="col">Name Category</th>
+                                    <th scope="col">List Menus</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
@@ -19,7 +19,11 @@
                                 <tr>
                                     <td>{{$category->name}}</td>
                                    
-                                    <td>{{$category->description}}</td>
+                                    <td>@foreach ($category->menus as $menu)
+                                        <ul>
+                                            <li>{{$menu->name}} - {{$menu->price}}$</li>
+                                        </ul>
+                                    @endforeach</td>
                                     <td>
                                         <div class="d-flex">
                                         <a href="{{route('admin.categories.edit',$category->id)}}" class="btn btn-info me-2"><i class="fa-solid fa-pen-to-square"></i></a>

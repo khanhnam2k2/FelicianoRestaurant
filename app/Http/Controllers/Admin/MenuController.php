@@ -17,14 +17,14 @@ class MenuController extends Controller
     public function index(Request $request)
     {
 
-        $menus = Menu::orderBy('id', 'desc')->simplePaginate(4);
+        $menus = Menu::latest()->simplePaginate(4);
 
         return view('admin.menus.index', compact('menus'));
     }
     public function search(Request $request)
     {
         $query = $request->input('query');
-        $menus = Menu::where('name', 'LIKE', "%$query%")->orderBy('id', 'desc')->simplePaginate(4);
+        $menus = Menu::where('name', 'LIKE', "%$query%")->latest()->simplePaginate(4);
         return view('admin.menus.index', compact('menus'));
     }
     /**
@@ -109,6 +109,6 @@ class MenuController extends Controller
         Storage::delete($menu->image);
         $menu->categories()->detach();
         $menu->delete();
-        return to_route('admin.menus.index')->with('danger', 'Category deleted successfully.');
+        return to_route('admin.menus.index')->with('success', 'Category deleted successfully.');
     }
 }

@@ -20,6 +20,6 @@ class RedirectIfNotUser
             return $next($request);
         }
 
-        return back()->with('danger', 'You must be logged in as a user');;
+        return back()->with('warning', 'Please log in');;
     }
 }
