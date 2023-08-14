@@ -73,11 +73,12 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	        	<li class="nav-item {{(request()->is('/')) ? 'active' : ''}}"><a href="/" class="nav-link">Home</a></li>
+	        	<li class="nav-item {{(request()->is('/')) ? 'active' : ''}}"><a href="/" class="nav-link">Trang chủ</a></li>
 	        	<li class="nav-item {{(request()->is('about')) ? 'active' : ''}}"><a href="{{route('about')}}" class="nav-link">About</a></li>
 	        	<li class="nav-item {{(request()->is('menus')) ? 'active' : ''}}"><a href="{{route('menus.index')}}" class="nav-link">Menu</a></li>
 	        	<li class="nav-item {{(request()->is('posts')) ? 'active' : ''}}" ><a href="{{route('post.index')}}" class="nav-link">Stories</a></li>
 	          <li class="nav-item {{(request()->is('contact')) ? 'active' : ''}}" ><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
+	          <li class="nav-item " ><a href="{{route('contact')}}" class="nav-link">ABC</a></li>
 	          <li class="nav-item cta"><a href="{{route('reservation')}}" class="nav-link">Book a table</a></li>
             @auth
             <div class="dropdown ml-4 mt-2 ">

@@ -18,7 +18,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" value="{{old('name')}}">
+                    <input type="text" name="name" class="form-control" placeholder="Tên của bạn" value="{{old('name')}}">
                     @error('name')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
@@ -27,7 +27,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" name="email" class="form-control" placeholder="Your Email" value="{{old('email')}}">
+                    <input type="email" name="email" class="form-control" placeholder="Email của bạn" value="{{old('email')}}">
                     @error('email')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
@@ -76,7 +76,7 @@
                 
                 <div class="col-md-12 mt-3">
                   <div class="form-group">
-                    <input type="submit" value="Make a Reservation" class="btn btn-primary py-3 px-5">
+                    <input type="submit" value="Make a Reservation" class="btn btn-info py-3 px-5">
                   </div>
                 </div>
               </div>
