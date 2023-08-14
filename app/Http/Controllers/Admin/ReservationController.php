@@ -38,7 +38,7 @@ class ReservationController extends Controller
         } else if ($reservation->status == 'canceled') {
             Mail::to($reservation->email)->send(new BookingCanceled($reservation));
             return redirect()->route('admin.index')
-                ->with('success', 'Table reservation has been canceled successfully!!!!!!!!');
+                ->with('success', 'Table reservation has been canceled successfully!!');
         };
         return redirect()->route('admin.index')
             ->with('success', 'Table reservation status has been successfully updated');
