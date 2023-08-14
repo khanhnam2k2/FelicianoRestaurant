@@ -41,7 +41,7 @@ class ReservationController extends Controller
                 ->with('success', 'Table reservation has been canceled successfully!!');
         };
         return redirect()->route('admin.index')
-            ->with('success', 'Table reservation status has been successfully updated');
+            ->with('success', 'Table reservation status has been successfully updateddddd');
     }
     public function destroy(Reservation $reservation)
     {
