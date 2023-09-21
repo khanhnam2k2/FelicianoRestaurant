@@ -29,9 +29,10 @@ class ReservationController extends Controller
             'status' => 'required|in:pending,confirmed,canceled',
         ]);
 
-        // $request->validate([
-        //     'status' => 'required|in:pending,confirmed,canceled',
-        // ]);
+        // // $request->validate([
+        // //     'status' => 'required|in:pending,confirmed,canceled',
+        //         sas
+        // // ]);
         $reservation->status = $request->input('status');
         $reservation->save();
         if ($reservation->status == 'confirmed') {
